@@ -1,7 +1,9 @@
 const pool = require('./pool');
 const { v4: uuidv4 } = require('uuid');
+const { initializeDatabase } = require('./schema');
 
 async function seed() {
+  await initializeDatabase();
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
