@@ -4,9 +4,10 @@
   "description": "Cal.com clone - Express.js backend",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "seed": "node src/db/seed.js"
+    "dev": "nodemon src/index.js",
+    "seed": "node src/db/seed.js",
+    "build": "echo 'No build step required for express'"
   },
   "dependencies": {
     "cors": "^2.8.5",
