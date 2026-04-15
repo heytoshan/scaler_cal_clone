@@ -6,6 +6,13 @@ const isProduction = process.env.NODE_ENV === 'production';
 const connectionString = process.env.DATABASE_URL || '';
 const requiresSsl = isProduction || connectionString.includes('neon.tech') || connectionString.includes('supabase');
 
+console.log('🔍 Database connection check:');
+console.log('   - URL found:', !!connectionString);
+console.log('   - SSL required:', requiresSsl);
+if (connectionString) {
+  console.log('   - Host (masked):', connectionString.split('@')[1] || 'Unknown');
+}
+
 const pool = new Pool({
   connectionString,
   ssl: requiresSsl ? { rejectUnauthorized: false } : false,
