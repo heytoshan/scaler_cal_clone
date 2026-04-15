@@ -5,8 +5,7 @@
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "seed": "npm run seed --prefix server",
     "install:all": "npm install && npm install --prefix server && npm install --prefix client",
-    "start": "npm start --prefix server",
-    "postinstall": "npm run install:all"
+    "start": "npm run dev"
   },
   "dependencies": {
     "concurrently": "^8.2.2"
